@@ -1,6 +1,13 @@
 import java.util.Scanner;
 
 public class DeleteValueInArray {
+    public static int seachElement (int[] arr, int x){
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==x)
+                return i;
+        }
+        return -1;
+    }
     public static void main(String[] args) {
         int n, X;
         Scanner sc = new Scanner(System.in);
@@ -31,22 +38,11 @@ public class DeleteValueInArray {
 
         //todo tim vi tri phan tu muon xoa
         X = sc1.nextInt();
-//        int d = 0;
-//        int c = n - 1;
-//        int l;
-//        while (d <= c) {
-//            l = (d + c) / 2;
-//            if (arr[l] == X) {
-//                System.out.println("Tìm thấy phần tử " + X + " tại vị trí " + l);
-////                return;
-////            } else if (arr[l] < X) {
-////                d = l + 1;
-////            } else {
-////                c = l - 1;
-//            } else
-//            System.out.println("Trong mảng không có phần tử nào chứa giá trị cần tìm.");
-//            break;
-//        }
+        int pos = seachElement(arr, X);
+        if(pos == -1){
+            System.out.println("khong tim thay phan tu trong mang");
+        } else
+            System.out.println("tim thay phan tu "+X+" tai vi tri: "+pos);
 
         //todo in ra mang moi sau khi xoa
         int count = 0;
